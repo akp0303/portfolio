@@ -12,11 +12,20 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+
       - name: Install
         run: npm install
-      - name: Build & Export
+
+      - name: Build (static export via next.config.ts)
         run: |
           npm run build
-          npm run export
+          test -d out || (echo "out/ not found" && ls -la && exit 1)
           touch out/.nojekyll
-          echo "kjaerbaek.
+          echo "kjaerbaek.com" > out/CNAME
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          publish_branch: gh-pages
