@@ -13,16 +13,10 @@ jobs:
         with:
           node-version: 20
       - name: Install
-        run: npm ci
+        run: npm install
       - name: Build & Export
         run: |
           npm run build
           npm run export
           touch out/.nojekyll
-          echo "kjaerbaek.com" > out/CNAME
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
-          publish_branch: gh-pages
+          echo "kjaerbaek.
