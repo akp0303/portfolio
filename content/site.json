@@ -1,0 +1,16 @@
+{
+  "siteTitle": "Alexander Kjærbæk",
+  "palette": {
+    "primary": "#0F172A",
+    "accent": "#3B82F6",
+    "bg": "#F8FAFC",
+    "text": "#111827"
+  },
+  "logo": "/uploads/logo.svg",
+  "videos": [
+    { "id": "vertical1", "title": "Vertikal 1", "embedUrl": "", "caption": "" },
+    { "id": "vertical2", "title": "Vertikal 2", "embedUrl": "", "caption": "" },
+    { "id": "horizontal1", "title": "Horisontal 1", "embedUrl": "", "caption": "" },
+    { "id": "horizontal2", "title": "Horisontal 2", "embedUrl": "", "caption": "" }
+  ]
+}

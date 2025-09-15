@@ -1,0 +1,29 @@
+body { margin: 0; font-family: sans-serif; }
+/* app/styles/globals.css */
+
+/* Fjern standard margin/padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sæt en standard font og baggrund */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+  line-height: 1.5;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Billeder */
+img {
+  max-width: 100%;
+  height: auto;
+}

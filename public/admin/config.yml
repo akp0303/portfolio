@@ -1,0 +1,48 @@
+backend:
+  name: github
+  repo: akp0303/portfolio
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+site_url: "https://kjaerbaek.com"
+logo_url: "/uploads/logo.svg"
+publish_mode: simple
+
+collections:
+  - name: "site"
+    label: "Forside (video + farver + logo)"
+    files:
+      - file: "content/site.json"
+        label: "Forsideindhold"
+        name: "sitejson"
+        format: "json"
+        fields:
+          - { label: "Site Title", name: "siteTitle", widget: "string" }
+          - label: "Palette"
+            name: "palette"
+            widget: "object"
+            fields:
+              - { label: "Primary", name: "primary", widget: "string" }
+              - { label: "Accent", name: "accent", widget: "string" }
+              - { label: "Baggrund", name: "bg", widget: "string" }
+              - { label: "Tekstfarve", name: "text", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "image", allow_multiple: false }
+          - label: "Video Slots"
+            name: "videos"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Titel", name: "title", widget: "string" }
+              - { label: "Embed URL (YouTube/Vimeo)", name: "embedUrl", widget: "string", hint: "fx https://www.youtube.com/embed/ID" }
+              - { label: "Billedtekst", name: "caption", widget: "string", required: false }
+
+  - name: "tekst"
+    label: "Tekstside"
+    files:
+      - file: "content/tekst.md"
+        label: "Tekstproduktion"
+        name: "tekst"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Indhold", name: "body", widget: "markdown" }
