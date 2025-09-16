@@ -4,6 +4,9 @@ on:
   push:
     branches: [ "main" ]
 
+permissions:
+  contents: write  # <- Giver GITHUB_TOKEN lov til at pushe
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -29,3 +32,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
           publish_branch: gh-pages
+          force_orphan: true  # hjælper hvis branchen ikke findes i forvejen
